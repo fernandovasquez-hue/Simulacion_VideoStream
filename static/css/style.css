@@ -1,0 +1,409 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #0f0f0f;
+}
+.header {
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 70px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 15px;
+}
+
+.nav-link {
+    font-size: 0.95rem;
+    padding: 5px 0;
+    text-decoration: none;
+}
+
+.logo_youtube{
+    width: 5%;
+}
+
+.logo_youtube img{
+    width: 100%;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #000;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.logo span {
+    color: red;
+}
+
+.contenedor-navegacion {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    justify-content: space-between;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-link {
+    color: #0f0f0f;
+}
+
+.nav-link.active {
+    font-weight: bold;
+    border-bottom: 2px solid #0f0f0f;
+}
+
+.buscador {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-grow: 1;
+    max-width: 400px;
+    flex-basis: 250px;
+}
+
+.buscador input {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #000000;
+    border-radius: 20px 0 0 20px;
+}
+
+.buscador button {
+    padding: 8px 15px;
+    border: 1px solid #000000;
+    background-color: #f8f8f8;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+}
+
+.imagenes_perfil {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 10px;
+}
+
+.imagenes_perfil img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+    DISPOSICIÓN PRINCIPAL (MAIN): FLEX-WRAP SIN MEDIA QUERIES
+   ========================================================================== */
+
+/* COMENTARIO: El contenedor principal usa flex-wrap para pasar la columna lateral abajo si no cabe horizontalmente */
+.contenedor-principal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+/* COMENTARIO: La sección principal toma más peso relativo (flex-grow: 1, flex-basis: 600px) */
+.seccion-principal-video {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 600px;
+    max-width: 100%;
+}
+
+/* COMENTARIO: La barra lateral toma flex-basis de 340px. Si el ancho de pantalla es inferior a 940px aprox, flex-wrap la mueve abajo */
+.barra-lateral {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ==========================================================================
+    REPRODUCTOR DE VIDEO Y DETALLES DEL VIDEO
+   ========================================================================== */
+
+.contenedor-reproductor {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.contenedor-reproductor video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.informacion_del_video {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nombre_video h1 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.nombre_video p {
+    font-size: 0.85rem;
+}
+
+/* COMENTARIO: Botones de interacción e iconos alineados dinámicamente con Flex */
+.interuactuar_con_video {
+    display: flex;
+    justify-content: flex-end;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.grupo-interacciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.interacciones {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 18px;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+.interacciones img {
+    width: 16px;
+    height: 16px;
+}
+
+.agregar_a_cola {
+    border: none;
+    background: transparent;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.opciones-tres-puntos {
+    margin-left: 5px;
+    font-weight: bold;
+}
+
+/* COMENTARIO: Sección del canal del creador */
+.canal_video {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.info-canal {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.info-canal img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.datos-canal h2 {
+    font-size: 1rem;
+}
+
+.suscriptores-canal {
+    font-size: 0.8rem;
+}
+
+.boton-suscribirse {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.descripcion {
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.mostrar-mas {
+    font-weight: bold;
+    color: #065fd4;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+    SECCIÓN "MÁS VIDEOS" INFERIOR
+   ========================================================================= */
+
+.seccion-mas-videos {
+    margin-top: 30px;
+}
+
+.titulo-seccion {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.carrusel-mas-videos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.tarjeta-video-inferior {
+    /* COMENTARIO: Uso de flex para adaptar las miniaturas inferiores automáticamente */
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 130px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contenedor-miniatura {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    position: relative;
+}
+
+.tarjeta-video-inferior h4 {
+    font-size: 0.85rem;
+}
+
+.tarjeta-video-inferior p {
+    font-size: 0.75rem;
+    color: #606060;
+}
+
+/* ==========================================================================
+    BARRA LATERAL (COLA Y RECOMENDADOS)
+   ========================================================================== */
+
+.encabezado-cola {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.encabezado-cola h2, .fila_recomendados h2 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+}
+
+.boton-limpiar-cola {
+    background: #f2f2f2;
+    border: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* COMENTARIO: Elemento individual de las listas de videos laterales */
+.siguiente_video {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.contenedor-miniatura-lateral {
+    width: 120px;
+    height: 68px;
+    flex-shrink: 0;
+    background-color: #ccc;
+    border-radius: 6px;
+    position: relative;
+}
+
+.siguiente_video .nombre_video {
+    flex-grow: 1;
+}
+
+.siguiente_video .nombre_video h3 {
+    font-size: 0.85rem;
+    margin-bottom: 3px;
+}
+
+.siguiente_video .nombre_video p {
+    font-size: 0.75rem;
+    color: #606060;
+}
+
+.boton-eliminar-cola {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: #606060;
+}
+
+.fila_recomendados .siguiente_video .agregar_a_cola {
+    border: 1px solid #000000;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
