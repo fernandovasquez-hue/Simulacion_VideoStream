@@ -1,13 +1,23 @@
-*{
+/* ==========================================================================
+   1. RESET Y ESTILOS GENERALES
+   ========================================================================== */
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ffffff;
     color: #0f0f0f;
 }
+
+/* ==========================================================================
+   2. NAVEGACIÓN Y ENCABEZADO (HEADER)
+   ========================================================================== */
+
 .header {
     border-bottom: 1px solid #e5e5e5;
     background-color: #fff;
@@ -15,6 +25,7 @@ body {
     top: 0;
     z-index: 100;
 }
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -22,37 +33,23 @@ body {
     padding: 0 15px;
 }
 
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
 .nav-container {
     display: flex;
     width: 100%;
     justify-content: space-between;
     align-items: center;
-    height: 70px;
-    flex-wrap: wrap;
-    height: auto;
     min-height: 70px;
     padding-top: 10px;
     padding-bottom: 10px;
     gap: 15px;
+    flex-wrap: wrap;
 }
 
-.nav-link {
-    font-size: 0.95rem;
-    padding: 5px 0;
-    text-decoration: none;
-}
-
-.logo_youtube{
+.logo_youtube {
     width: 5%;
 }
 
-.logo_youtube img{
+.logo_youtube img {
     width: 100%;
 }
 
@@ -80,10 +77,16 @@ body {
 }
 
 .nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
     list-style: none;
 }
 
 .nav-link {
+    font-size: 0.95rem;
+    padding: 5px 0;
+    text-decoration: none;
     color: #0f0f0f;
 }
 
@@ -92,6 +95,7 @@ body {
     border-bottom: 2px solid #0f0f0f;
 }
 
+/* Buscador y opciones de perfil */
 .buscador {
     display: flex;
     justify-content: flex-end;
@@ -131,10 +135,9 @@ body {
 }
 
 /* ==========================================================================
-    DISPOSICIÓN PRINCIPAL (MAIN): FLEX-WRAP SIN MEDIA QUERIES
+   3. DISPOSICIÓN PRINCIPAL (CONTENEDOR MAIN)
    ========================================================================== */
 
-/* COMENTARIO: El contenedor principal usa flex-wrap para pasar la columna lateral abajo si no cabe horizontalmente */
 .contenedor-principal {
     display: flex;
     flex-wrap: wrap;
@@ -143,7 +146,6 @@ body {
     margin-bottom: 40px;
 }
 
-/* COMENTARIO: La sección principal toma más peso relativo (flex-grow: 1, flex-basis: 600px) */
 .seccion-principal-video {
     flex-grow: 1;
     flex-shrink: 1;
@@ -151,7 +153,6 @@ body {
     max-width: 100%;
 }
 
-/* COMENTARIO: La barra lateral toma flex-basis de 340px. Si el ancho de pantalla es inferior a 940px aprox, flex-wrap la mueve abajo */
 .barra-lateral {
     flex-grow: 1;
     flex-shrink: 1;
@@ -162,7 +163,7 @@ body {
 }
 
 /* ==========================================================================
-    REPRODUCTOR DE VIDEO Y DETALLES DEL VIDEO
+   4. REPRODUCTOR PRINCIPAL E INFORMACIÓN DEL VIDEO
    ========================================================================== */
 
 .contenedor-reproductor {
@@ -194,7 +195,7 @@ body {
     font-size: 0.85rem;
 }
 
-/* COMENTARIO: Botones de interacción e iconos alineados dinámicamente con Flex */
+/* Interacciones (Likes, compartir) */
 .interuactuar_con_video {
     display: flex;
     justify-content: flex-end;
@@ -236,7 +237,7 @@ body {
     font-weight: bold;
 }
 
-/* COMENTARIO: Sección del canal del creador */
+/* Información del canal */
 .canal_video {
     display: flex;
     justify-content: space-between;
@@ -290,8 +291,36 @@ body {
 }
 
 /* ==========================================================================
-    SECCIÓN "MÁS VIDEOS" INFERIOR
-   ========================================================================= */
+   5. REGULARES Y PROPORCIONES DE TODAS LAS MINIATURAS DE VIDEO
+   ========================================================================== */
+
+/* 1. Todos los contenedores de miniatura fuerzan una proporción constante de 16:9 */
+.contenedor-miniatura,
+.contenedor-miniatura-lateral {
+    aspect-ratio: 16 / 9;
+    border-radius: 8px;
+    overflow: hidden; /* Corta cualquier exceso de imagen */
+    background-color: #e5e5e5; /* Color de fondo mientras carga */
+}
+
+/* Las miniaturas laterales conservan su ancho fijo, adaptando la altura según el 16:9 */
+.contenedor-miniatura-lateral {
+    width: 120px;
+    height: auto; 
+    flex-shrink: 0;
+}
+
+/* 2. Clase para que TODAS las imágenes se ajusten sin deformarse */
+.img-miniatura {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garantiza que la imagen llene el espacio sin distorsionarse */
+    display: block;
+}
+
+/* ==========================================================================
+   6. SECCIÓN "MÁS VIDEOS" (INFERIOR)
+   ========================================================================== */
 
 .seccion-mas-videos {
     margin-top: 30px;
@@ -309,7 +338,6 @@ body {
 }
 
 .tarjeta-video-inferior {
-    /* COMENTARIO: Uso de flex para adaptar las miniaturas inferiores automáticamente */
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 130px;
@@ -322,6 +350,7 @@ body {
     width: 100%;
     aspect-ratio: 16 / 9;
     border-radius: 8px;
+    overflow: hidden;
     position: relative;
 }
 
@@ -335,7 +364,7 @@ body {
 }
 
 /* ==========================================================================
-    BARRA LATERAL (COLA Y RECOMENDADOS)
+   7. BARRA LATERAL (COLA Y RECOMENDADOS)
    ========================================================================== */
 
 .encabezado-cola {
@@ -345,7 +374,8 @@ body {
     margin-bottom: 10px;
 }
 
-.encabezado-cola h2, .fila_recomendados h2 {
+.encabezado-cola h2, 
+.fila_recomendados h2 {
     font-size: 1.1rem;
     margin-bottom: 10px;
 }
@@ -359,7 +389,6 @@ body {
     cursor: pointer;
 }
 
-/* COMENTARIO: Elemento individual de las listas de videos laterales */
 .siguiente_video {
     display: flex;
     align-items: center;
@@ -373,6 +402,7 @@ body {
     flex-shrink: 0;
     background-color: #ccc;
     border-radius: 6px;
+    overflow: hidden;
     position: relative;
 }
 
