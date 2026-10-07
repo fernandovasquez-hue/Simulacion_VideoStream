@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. RESET Y ESTILOS GENERALES
+    1. RESET Y ESTILOS GENERALES
    ========================================================================== */
 
 * {
@@ -135,7 +135,7 @@ body {
 }
 
 /* ==========================================================================
-   3. DISPOSICIÓN PRINCIPAL (CONTENEDOR MAIN)
+    3. DISPOSICIÓN PRINCIPAL (CONTENEDOR MAIN)
    ========================================================================== */
 
 .contenedor-principal {
@@ -163,7 +163,7 @@ body {
 }
 
 /* ==========================================================================
-   4. REPRODUCTOR PRINCIPAL E INFORMACIÓN DEL VIDEO
+    4. REPRODUCTOR PRINCIPAL E INFORMACIÓN DEL VIDEO
    ========================================================================== */
 
 .contenedor-reproductor {
@@ -291,7 +291,7 @@ body {
 }
 
 /* ==========================================================================
-   5. REGULARES Y PROPORCIONES DE TODAS LAS MINIATURAS DE VIDEO
+    5. REGULARES Y PROPORCIONES DE TODAS LAS MINIATURAS DE VIDEO
    ========================================================================== */
 
 /* 1. Todos los contenedores de miniatura fuerzan una proporción constante de 16:9 */
@@ -319,7 +319,7 @@ body {
 }
 
 /* ==========================================================================
-   6. SECCIÓN "MÁS VIDEOS" (INFERIOR)
+    6. SECCIÓN "MÁS VIDEOS" (INFERIOR)
    ========================================================================== */
 
 .seccion-mas-videos {
@@ -364,7 +364,7 @@ body {
 }
 
 /* ==========================================================================
-   7. BARRA LATERAL (COLA Y RECOMENDADOS)
+    7. BARRA LATERAL (COLA Y RECOMENDADOS)
    ========================================================================== */
 
 .encabezado-cola {
