@@ -319,51 +319,6 @@ body {
 }
 
 /* ==========================================================================
-    6. SECCIÓN "MÁS VIDEOS" (INFERIOR)
-   ========================================================================== */
-
-.seccion-mas-videos {
-    margin-top: 30px;
-}
-
-.titulo-seccion {
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-}
-
-.carrusel-mas-videos {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-}
-
-.tarjeta-video-inferior {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 130px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-
-.contenedor-miniatura {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 8px;
-    overflow: hidden;
-    position: relative;
-}
-
-.tarjeta-video-inferior h4 {
-    font-size: 0.85rem;
-}
-
-.tarjeta-video-inferior p {
-    font-size: 0.75rem;
-    color: #606060;
-}
-
-/* ==========================================================================
     7. BARRA LATERAL (COLA Y RECOMENDADOS)
    ========================================================================== */
 
